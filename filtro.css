@@ -1,3 +1,32 @@
 body {
-  background-color: grey;
+  background-image: lightblue;
+  text-align: center;
+}
+.Rojo {
+    float: left;
+    margin-left: 7%;
+    margin-right: 2%;
+}
+.Verde {
+    float: left;
+    margin-right: 2%;
+}
+.Azul {
+    float: left;
+    margin-right: 2%;
+}
+
+.Gris {
+    float: left;
+    margin-right: 2%;
+}
+.imagenes{
+  background-image: url(fondo.jpg);
+  background-size: cover;
+  column-count: 2;
+  margin-top: 3%;
+  text-align: center;
+  column-rule-style: double;
+  column-rule-color: pink;
+  margin-right: 50%;
 }

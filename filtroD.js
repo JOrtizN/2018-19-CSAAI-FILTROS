@@ -87,6 +87,7 @@ function main() {
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
   }
+  console.log(umbral);
   deslizadorA.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
     range_value.innerHTML = deslizador.value

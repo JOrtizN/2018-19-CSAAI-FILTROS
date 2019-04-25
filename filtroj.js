@@ -14,9 +14,11 @@ function main() {
 
   //-- Valor del deslizador
   range_value = document.getElementById('ver')
-  verde = document.getElementById('ver2')
-  azul = document.getElementById('ver3')
-
+  rv_verde = document.getElementById('ver2')
+  rv_azul = document.getElementById('ver3')
+  rojo = 0;
+  verde = 0;
+  azul = 0;
   //-- Se establece como tamaño del canvas el mismo
   //-- que el de la imagen original
   canvas.width = img.width;
@@ -30,6 +32,7 @@ function main() {
   //-- No se han hecho manipulaciones todavia
   ctx.drawImage(img, 0,0);
 
+
   //-- Funcion de retrollamada del deslizador
   deslizador.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
@@ -37,7 +40,13 @@ function main() {
 
     //-- Situar la imagen original en el canvas
     //-- No se han hecho manipulaciones todavia
-    ctx.drawImage(img, 0,0);
+    try {
+      ctx.drawImage(imgData, 0,0);
+    } catch (e) {
+      ctx.drawImage(img, 0,0);
+    } finally {
+
+    }
 
     //-- Obtener la imagen del canvas en pixeles
     var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -59,11 +68,17 @@ function main() {
   }
   deslizadorV.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
-    verde.innerHTML = deslizadorV.value
+    rv_verde.innerHTML = deslizadorV.value
 
     //-- Situar la imagen original en el canvas
     //-- No se han hecho manipulaciones todavia
-    ctx.drawImage(img, 0,0);
+    try {
+      ctx.drawImage(imgData, 0,0);
+    } catch (e) {
+      ctx.drawImage(img, 0,0);
+    } finally {
+
+    }
 
     //-- Obtener la imagen del canvas en pixeles
     var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
@@ -83,13 +98,21 @@ function main() {
     //-- Poner la imagen modificada en el canvas
     ctx.putImageData(imgData, 0, 0);
   }
+  console.log(data);
+
   deslizadorA.oninput = () => {
     //-- Mostrar el nuevo valor del deslizador
-    azul.innerHTML = deslizadorA.value
+    rv_azul.innerHTML = deslizadorA.value
 
     //-- Situar la imagen original en el canvas
     //-- No se han hecho manipulaciones todavia
-    ctx.drawImage(img, 0,0);
+    try {
+      ctx.drawImage(imgData, 0,0);
+    } catch (e) {
+      ctx.drawImage(img, 0,0);
+    } finally {
+
+    }
 
     //-- Obtener la imagen del canvas en pixeles
     var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
